@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 100rpx;
+    position: relative;
+} 
+.index-container {
+    padding-bottom: 100rpx
+}
+.box {
+    position: fixed;
+    right: 0rpx;
+    bottom: 0rpx;
+    left: 0rpx;
+}
+
+.box view.cu-bar {
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}

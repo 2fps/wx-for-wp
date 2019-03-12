@@ -1,0 +1,11 @@
+.bottom-bar {  
+    margin: 20rpx;
+    position: fixed;
+    right: 0rpx;
+    bottom: 0rpx;
+    left: 0rpx;
+}
+
+.bottom-bar view.cu-bar {
+    margin-top: 20rpx; 
+}

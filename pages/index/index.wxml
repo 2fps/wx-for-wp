@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+    <scroll-view class="index-container hide {{ curIndex === 0 ? '.show' : '' }}" scroll-y style="width: 100%; height: 300px;" scroll-top="100rpx">
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+    </scroll-view>
+    <view class="hide {{ curIndex === 1 ? '.show' : '' }}">
+        1
+    </view>
+    <view class="hide {{ curIndex === 2 ? '.show' : '' }}">
+        2
+    </view>
+    <view class="hide {{ curIndex === 3 ? '.show' : '' }}">
+        3
+    </view>
+</view>
+<view class='box'>
+    <view class="cu-bar tabbar bg-black">
+        <view class="action text-orange" data-id="0" bindtap="clickIndex">
+            <view class='icon-homefill'></view>
+            首页
+        </view>
+        <view class="action text-gray" data-id="1" bindtap="clickIndex">
+            <view class='icon-similar'></view>
+            菜单
+        </view>
+        <view class="action text-gray" data-id="2" bindtap="clickIndex">
+            <view class='icon-recharge'></view>
+            图灵机器人
+        </view>
+        <view class="action text-gray" data-id="3" bindtap="clickIndex">
+            <view class='icon-my'>
+                <!-- <view class='cu-tag badge'></view> -->
+            </view>
+            我的
+        </view>
+    </view>
+</view>

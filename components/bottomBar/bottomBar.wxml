@@ -1,0 +1,27 @@
+
+<view class='bottom-bar'>
+    <view class="cu-bar tabbar margin-bottom-xl bg-black" bindtap="chooseAnswer">
+        <view class="action text-orange">
+            <view class='icon-homefill'></view> 首页
+            </view>
+        <view class="action text-gray">
+            <view class='icon-similar'></view> 分类
+            </view>
+        <view class="action text-gray">
+            <view class='icon-recharge'></view>
+            积分
+        </view>
+        <view class="action text-gray">
+            <view class='icon-cart'>
+                <view class='cu-tag badge'>99</view>
+            </view>
+            购物车
+        </view>
+        <view class="action text-gray">
+            <view class='icon-my'>
+                <view class='cu-tag badge'></view>
+            </view>
+            我的
+        </view>
+    </view>
+</view>
