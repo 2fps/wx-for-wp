@@ -15,9 +15,6 @@
     bottom: 0rpx;
     left: 0rpx;
 }
-
-.box view.cu-bar {
-}
 .hide {
     display: none;
 }

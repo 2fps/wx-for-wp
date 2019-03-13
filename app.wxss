@@ -4,3 +4,8 @@
 
 @import "./wxss/icon.wxss";
 @import "./wxss/colorui.wxss";
+@import "./wxss/wxParse.wxss";
+
+.text-left {
+    text-align: left !important;
+}

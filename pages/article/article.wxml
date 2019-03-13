@@ -1,0 +1,10 @@
+<import src="../../utils/wxParse.wxml"/>
+
+<view class='padding'>
+    <view class='padding-lr bg-white margin-top text-center'>
+        <view class='solid-bottom padding'>
+        <text class='text-Abc'>{{ title }}</text>
+        </view>
+        <template is="wxParse" class="padding text-left" data="{{ wxParseData:article.nodes }}" />
+    </view>
+</view>
