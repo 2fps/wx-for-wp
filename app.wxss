@@ -9,3 +9,6 @@
 .text-left {
     text-align: left !important;
 }
+.width-max {
+    width: 100%;
+}

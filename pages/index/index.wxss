@@ -21,3 +21,9 @@
 .show {
     display: block;
 }
+.cu-custom {
+    margin-top: 100rpx;
+}
+.cu-bar.foot {
+    bottom: 100rpx !important;
+}

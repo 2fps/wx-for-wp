@@ -6,7 +6,7 @@
                 <view class="cu-item shadow">
                     <view class="cu-list menu menu-avatar">
                         <view class="cu-item">
-                            <view class="cu-avatar round lg" style="background-image:url(http://www.zhuyuntao.cn/wp-content/uploads/2016/07/tx-1.jpg);"></view>
+                            <view class="cu-avatar round lg" style="background-image:url({{ headImg }});"></view>
                             <view class='content flex-sub'>
                             <view>
                                 {{ art.author }}
@@ -37,34 +37,58 @@
     <view class="hide {{ curIndex === 1 ? '.show' : '' }}">
         2
     </view>
-    <view class="hide {{ curIndex === 2 ? '.show' : '' }}">
-        2
+    <view class="hide width-max {{ curIndex === 2 ? '.show' : '' }}" style="max-height:{{ charHeight }};">
+        <view class="cu-custom">   <!-- style="height:{{ height }};" -->
+            <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+                <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+                    <text class='icon-back'></text>
+                    聊天
+                </navigator>
+            </view>
+        </view>
+        <scroll-view class="cu-chat" scroll-into-view="{{ scrollIntoView }}" scroll-y='true'>
+            <view wx:for="{{ chat }}" wx:for-index="key" wx:for-item="list" wx:key="key" class="cu-item {{ list.side === 1 ? 'self' : '' }}" id="{{ list.id }}">
+                <view class="cu-avatar radius" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);" wx:if="{{ list.side === 0 }}"></view>
+                <view class="main">
+                    <view class="content shadow {{ list.side === 1 ? 'bg-green' : '' }}">
+                        <text>{{ list.con }}</text>
+                    </view>
+                </view>
+                <view class="cu-avatar radius" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);" wx:if="{{ list.side === 1 }}"></view>
+                <view class='date'>{{ list.time }}</view>
+            </view>
+        </scroll-view>
+        <view class="cu-bar foot input">
+            <view class='action'>
+                <text class='icon-sound text-grey'></text>
+            </view>
+            <input class='solid-bottom' focus="{{false}}" maxlength="300" cursor-spacing="10" bindinput="changeInputValue" value="{{ chatContent }}"></input>
+            <view class='action'>
+                <text class='icon-emojifill text-grey'></text>
+            </view>
+            <button class='cu-btn bg-green shadow' bindtap="sendMessage">发送</button>
+        </view>
     </view>
-    <view class="hide {{ curIndex === 3 ? '.show' : '' }}">
-        <view class="cu-modal {{modalName=='gridModal'?'show':''}}" bindtap='hideModal'>
-            <view class="cu-dialog" catchtap>
-                <radio-group class="block" bindchange="gridchange">
-                <view class='cu-list menu text-left'>
-                    <view class='cu-item' wx:for="{{3}}" wx:key>
-                    <label class='flex justify-between align-center flex-sub'>
-                        <view class='flex-sub'>{{index +3}} 列</view>
-                        <radio class='round' value='{{index +3}}' checked='{{gridCol==index+3}}'></radio>
-                    </label>
-                    </view>
-                </view>
-                </radio-group>
-                <view class='cu-list menu text-left solid-top'>
-                <view class='cu-item'>
-                    <view class='content'>
-                    <text class='text-grey'>边框</text>
-                    </view>
-                    <view class='action'>
-                    <switch bindchange="gridswitch"></switch>
-                    </view>
-                </view>
+    <view class="hide width-max {{ curIndex === 3 ? '.show' : '' }}">
+        <view class="cu-bar bg-white solid-bottom margin-top">
+            <view class='action'>
+                <text class='icon-title text-orange '></text> 我的
+            </view>
+        </view>
+        <view class="cu-list menu">
+            <view class="cu-item">
+                <view class='content'>
+                <text class='icon-circlefill text-grey'></text>
+                <text class='text-grey'>图标 + 标题</text>
                 </view>
             </view>
+            <view class="cu-item">
+                <navigator class='content' hover-class='none' url='../list/list' open-type="redirect">
+                    <text class='icon-discoverfill text-orange'></text>
+                    <text class='text-grey'>Navigator 跳转</text>
+                </navigator>
             </view>
+        </view>
     </view>
 </view>
 <view class='box'>
